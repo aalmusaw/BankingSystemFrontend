@@ -10,12 +10,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SummaryComponent } from './summary/summary.component';
+import { AccountSummaryComponent } from './account-summary/account-summary.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SummaryComponent
+    SummaryComponent,
+    AccountSummaryComponent,
+    LogoutComponent
   ],
   imports: [
     HttpClientModule,
