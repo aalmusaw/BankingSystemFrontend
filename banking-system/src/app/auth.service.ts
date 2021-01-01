@@ -36,4 +36,8 @@ export class AuthService {
       localStorage.setItem('accessToken', res.accessToken);
     });
   }
+
+  logout() {
+    return this.http.post<any>(this._refreshTokenUrl, {refreshToken: localStorage.getItem('refreshToken')});
+  }
 }
