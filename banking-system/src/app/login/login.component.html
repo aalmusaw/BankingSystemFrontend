@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg">
+          <h1>
+              Log in to ALPHA
+          </h1>
+        <form>
+            <div class="form-group">
+              <label for="user-email">Email address</label>
+              <input [(ngModel)]="email" type="email" class="form-control" id="user-email"
+               name="user-email" aria-describedby="emailHelp" placeholder="Enter email" required/>
+              <small id="emailHelp" class="form-text text-muted">If you have not signed up yet, talk to one of our agents in the closest branch.</small>
+            </div>
+            <div class="form-group">
+              <label for="user-password">Password</label>
+              <input [(ngModel)]="password" type="password" class="form-control" id="user-password" 
+              name="user-password" placeholder="Password" required/>
+            </div>
+            <button (click)="loginUser()" type="submit" class="btn btn-primary">Submit</button>
+            <p id="message">{{message}}</p>
+            <br>
+            <br>
+          </form>
+      </div>
+      <div class="col-lg">
+          <div id="get-to-know-us">
+            <h1>Bank with ALPHA</h1>
+            <h4>Bank from the comfort of your device. Our website offers:</h4>
+            <ul>
+                <li>A complete summary of your financial status</li>
+                <li>Online Banking account management</li>
+                <li>Detailed monthly transactions review</li>
+                <li>Bill Payments</li>
+                <li>Easy and secure balance e-transfers</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+</div>

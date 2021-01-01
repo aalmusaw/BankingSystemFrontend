@@ -1,0 +1,17 @@
+#get-to-know-us {
+    margin-left: 4em;
+}
+
+#get-to-know-us li {
+    margin-top: 2em;
+}
+
+.form-group {
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+#message {
+    color: red;
+    margin-top: 2em;
+}

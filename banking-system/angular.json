@@ -62,7 +62,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "banking-system:build"
+            "browserTarget": "banking-system:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
