@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { PayBillComponent } from './pay-bill/pay-bill.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     AccountSummaryComponent,
     LogoutComponent,
     ProfileComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    PayBillComponent
   ],
   imports: [
     HttpClientModule,

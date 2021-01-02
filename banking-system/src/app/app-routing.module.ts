@@ -6,6 +6,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './auth.guard';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { PayBillComponent } from './pay-bill/pay-bill.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,11 @@ const routes: Routes = [
   {
     path: 'account/:number',
     component: TransactionsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'paybill',
+    component: PayBillComponent,
     canActivate: [AuthGuard]
   },
   {
