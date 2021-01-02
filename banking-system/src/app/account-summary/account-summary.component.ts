@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-account-summary',
   templateUrl: './account-summary.component.html',
@@ -8,8 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AccountSummaryComponent implements OnInit {
   @Input() accountNumber: string;
   @Input() accountBalance: number;
-  constructor() { }
+  constructor(private router: Router) { }
   ngOnInit(): void {
+  }
+
+  onSelect() {
+    this.router.navigate(['/account', this.accountNumber]);
   }
 
 }
