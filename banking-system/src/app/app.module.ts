@@ -13,6 +13,9 @@ import { SummaryComponent } from './summary/summary.component';
 import { AccountSummaryComponent } from './account-summary/account-summary.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -21,13 +24,15 @@ import { ProfileComponent } from './profile/profile.component';
     SummaryComponent,
     AccountSummaryComponent,
     LogoutComponent,
-    ProfileComponent
+    ProfileComponent,
+    TransactionsComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NoopAnimationsModule
   ],
   providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService],
