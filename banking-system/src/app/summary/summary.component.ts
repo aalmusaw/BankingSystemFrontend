@@ -1,6 +1,7 @@
-import { summaryFileName } from '@angular/compiler/src/aot/util';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
+import { AuthService } from '../auth.service';
+import { interval, Subscription } from 'rxjs';
 
 
 @Component({
@@ -8,12 +9,16 @@ import { CustomerService } from '../customer.service';
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.css']
 })
-export class SummaryComponent implements OnInit {
+export class SummaryComponent implements OnInit, OnDestroy {
   accounts: Array<any> = []
   name: string;
-  constructor(private cusotmerProvider: CustomerService) { }
+  subscription: Subscription;
+  constructor(private cusotmerProvider: CustomerService, private auth: AuthService) { }
 
   ngOnInit(): void {
+  const source = interval(50000);
+  this.subscription = source.subscribe(val => this.auth.isAuthenticated());
+    this.auth.isAuthenticated(); // refreshes token
     this.cusotmerProvider.getCustomer().subscribe(
       res => {
         const docs = res.accounts;
@@ -21,6 +26,10 @@ export class SummaryComponent implements OnInit {
         this.accounts = docs.map(acct_doc => {return {number: acct_doc.number, balance: parseFloat(acct_doc.balance.$numberDecimal)}});
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   computeBalance() {
