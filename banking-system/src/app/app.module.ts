@@ -16,6 +16,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PayBillComponent } from './pay-bill/pay-bill.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PayBillComponent } from './pay-bill/pay-bill.component';
     LogoutComponent,
     ProfileComponent,
     TransactionsComponent,
-    PayBillComponent
+    PayBillComponent,
+    TransferComponent
   ],
   imports: [
     HttpClientModule,
