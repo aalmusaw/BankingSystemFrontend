@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { SummaryComponent } from './summary/summary.component';
 import { AccountSummaryComponent } from './account-summary/account-summary.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     SummaryComponent,
     AccountSummaryComponent,
-    LogoutComponent
+    LogoutComponent,
+    ProfileComponent
   ],
   imports: [
     HttpClientModule,

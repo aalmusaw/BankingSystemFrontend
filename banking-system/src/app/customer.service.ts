@@ -10,7 +10,6 @@ export class CustomerService {
   constructor(private http: HttpClient, private _auth: AuthService) {}
 
   getCustomer() {
-    this._auth.refreshToken();
     let headers = new HttpHeaders();
     const header = headers.append('Authorization', `Bearer ${localStorage.getItem('accessToken')}`);
     return this.http.get<any>(this._customerUrl, {headers: header});
