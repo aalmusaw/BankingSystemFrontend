@@ -7,7 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './auth.guard';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { PayBillComponent } from './pay-bill/pay-bill.component';
-
+import { TransferComponent } from './transfer/transfer.component';
 
 const routes: Routes = [
   {
@@ -36,6 +36,11 @@ const routes: Routes = [
   {
     path: 'paybill',
     component: PayBillComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'transfer',
+    component: TransferComponent,
     canActivate: [AuthGuard]
   },
   {

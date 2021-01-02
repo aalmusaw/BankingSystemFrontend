@@ -63,7 +63,7 @@ export class PayBillComponent implements OnInit, OnDestroy {
         err => {
           this.billPayed = true;
           this.paySuccessful = false;
-          this.message = 'Payment could not be made due to an error on the server'
+          this.message = err.error.message || 'Payment could not be made due to an error on the server';
         }
       );
     }

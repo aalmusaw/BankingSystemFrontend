@@ -8,6 +8,7 @@ import {AuthService} from './auth.service';
 export class CustomerService {
   private _customerUrl:string = `http://localhost:3002/customer/${localStorage.getItem('email')}`;
   private _merchantUrl:string = 'http://localhost:3002/merchant/';
+  private _transferUrl: string = 'http://localhost:3002/customer/';
 
 
   constructor(private http: HttpClient, private _auth: AuthService) {}
@@ -21,6 +22,16 @@ export class CustomerService {
   payBill(merchant: string, accountNumber: string, amount: number) {
     let headers = new HttpHeaders();
     const url = this._merchantUrl+encodeURIComponent(merchant);
+    const body = {accountNumber: accountNumber, amount: amount};
+    const header = headers
+    .append('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
+    .append('Content-Type', 'application/json');
+    return this.http.post<any>(url, body, {headers: header});
+  }
+
+  transferBalance(recipient: string, accountNumber: string, amount: number) {
+    let headers = new HttpHeaders();
+    const url = this._transferUrl+encodeURIComponent(recipient);
     const body = {accountNumber: accountNumber, amount: amount};
     const header = headers
     .append('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
